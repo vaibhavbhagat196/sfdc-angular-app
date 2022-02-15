@@ -1,3 +1,7 @@
+// add routing to the app -
+// https://angular.io/guide/router
+
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,11 +11,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title: string = 'sfdc-angular-app';
-  myName: string = 'Vaibhav bhagat';
+  myName: string = 'Vaman Deshmukh';
   // server creation 
   allowNewServer: boolean = false;
   serverStatus: string = "Not created";
   serverName: string = '';
+  displayOrHide: boolean = false;
 
   constructor() {
     setTimeout(() => {
@@ -30,6 +35,10 @@ export class AppComponent {
   getServerName = (event: any) => {
     console.log(event.target.value);
     this.serverName = event.target.value;
+  }
+
+  onDisplayOrHideFunction =() => {
+    this.displayOrHide = !this.displayOrHide;
   }
 
 }
